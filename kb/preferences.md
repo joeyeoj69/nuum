@@ -8,3 +8,8 @@
 - Relay TLS: CF Origin Cert + AOP; SSL=Strict
 - Storage Box: key-based mount on lake
 - Infra: Ubuntu 24.04 LTS
+
+# GitHub
+
+- Username: joeyeoj69
+- Default namespace for nuum-related projects
