@@ -1,0 +1,3 @@
+# IBKR Gateway — Headless Automation (nuum)
+
+... [content from gateway-headless.md above] ...

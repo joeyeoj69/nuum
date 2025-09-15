@@ -1,0 +1,3 @@
+# Clean Install Recipe (IBG + IBC inside Docker)
+
+... [content from install-recipe.md above] ...
