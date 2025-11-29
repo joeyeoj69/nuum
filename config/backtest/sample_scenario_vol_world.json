@@ -1,0 +1,56 @@
+{
+  "scenario_id": "sample_vol_world_studio1",
+  "description": "Sample unified backtest over synthetic lake1 state in volatility world-model on studio1.",
+  "start_ts": "2024-01-01T00:00:00Z",
+  "end_ts": "2024-01-01T06:00:00Z",
+  "universe": {
+    "universe_id": "demo_universe",
+    "symbols": ["SPX", "NDX", "RUT"],
+    "lake1_snapshot_ts": "2024-01-01T00:00:00Z",
+    "lake1_state_path": null
+  },
+  "strategies": [
+    {
+      "strategy_id": "uw_trend",
+      "kind": "uw",
+      "params": {
+        "trend_sensitivity": 0.2
+      }
+    },
+    {
+      "strategy_id": "gamma_reversion",
+      "kind": "gamma",
+      "params": {
+        "gamma_scale": 0.1,
+        "ref_price": 100.0
+      }
+    },
+    {
+      "strategy_id": "vol_targeting",
+      "kind": "vol",
+      "params": {
+        "vol_target": 0.25,
+        "vol_leverage": 8.0
+      }
+    }
+  ],
+  "risk": {
+    "max_gross_notional": 1000000.0,
+    "max_leverage": 5.0,
+    "max_drawdown": 0.3,
+    "other_limits": {
+      "max_symbol_weight": 0.3
+    }
+  },
+  "fees": {
+    "commission_per_contract": 0.5,
+    "slippage_bps": 1.0,
+    "borrow_cost_bps": 50.0,
+    "other_fees": {
+      "exchange_fee_bps": 0.5
+    }
+  },
+  "lake1_env": "studio1",
+  "world_model": "volatility",
+  "artifacts_dir": "artifacts/backtest_sample"
+}
